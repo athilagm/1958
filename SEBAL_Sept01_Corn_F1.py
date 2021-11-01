@@ -1,7 +1,5 @@
 ''' Script name: SURFACE ENERGY ALGORITHMS FOR LAND (SEBAL)
 
-# Author: Athila Montibeller
-
 # Script designed to estimate Evapotranspiration (ET) using variables/images obtained on September 01, 2016. If another type of imagery/date used then change them as indicated below
 
 # ------------------------------------------------------------------ FEED THIS SCRIPT WITH VARIABLES FROM FLUX TOWER #11 (Corn Field) ------------------------------------------------------------------ #
