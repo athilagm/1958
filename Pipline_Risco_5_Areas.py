@@ -37,15 +37,38 @@ dissolveField_COR = ""
 arcpy.Buffer_analysis(tracado_ANEEL, Buffer_Linha_COR, distanceField_COR, sideType_COR, endType_COR, 
                       dissolveType_COR, dissolveField_COR)
 
-## RECORTA A MATRIZ DE RISCO INTEGRADO PARA O CORREDOR UTILIZANDO A FERRAMENTA CLIP (DATA MANAGEMENT)
+## RECORTA As MATRIZ DE RISCO INTEGRADO PARA O CORREDOR UTILIZANDO A FERRAMENTA EXTRACT BY MASK 
 
-# Set local variables
-#inRaster = 'raster_risco'
-#inMaskData = 'Buffer_Linha_COR'
+#RISCO INTEGRADO
+
 arcpy.CheckOutExtension("Spatial")
-
 outExtractByMask = ExtractByMask(raster_risco, Buffer_Linha_COR)
-outExtractByMask.save("Corredor_Risco.tif")
+outExtractByMask.save("Corredor_Risco_INTEGRADO.tif")
+
+## RISCO ENGENHARIA
+
+arcpy.CheckOutExtension("Spatial")
+outExtractByMask = ExtractByMask(raster_engenharia, Buffer_Linha_COR)
+outExtractByMask.save("Corredor_Risco_ENG.tif")
+
+## RISCO AMBIENTAL
+
+arcpy.CheckOutExtension("Spatial")
+outExtractByMask = ExtractByMask(raster_meioambiente, Buffer_Linha_COR)
+outExtractByMask.save("Corredor_Risco_AMB.tif")
+
+## RISCO FUNDIÁRIO
+
+arcpy.CheckOutExtension("Spatial")
+outExtractByMask = ExtractByMask(raster_fundiario, Buffer_Linha_COR)
+outExtractByMask.save("Corredor_Risco_FUND.tif")
+
+## RISCO O&M
+
+arcpy.CheckOutExtension("Spatial")
+outExtractByMask = ExtractByMask(raster_om, Buffer_Linha_COR)
+outExtractByMask.save("Corredor_Risco_OM.tif")
+
 
 #-------------------------------------------------------------- INICIALIZA ANÁLISE PARA RISCO BRASIL -----------------------------------------------------------#
 # À PARTIR DAQUI INICIALIZA A ANÁLISE UTILIZANDO A FERRAMENTA ZONAL STATISTICS
