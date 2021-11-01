@@ -1,4 +1,4 @@
-''' Script name: SURFACE ENERGY ALGORITHMS FOR LAND (SEBAL)
+''' Script name: SURFACE ENERGY BALANCE ALGORITHMS FOR LAND (SEBAL)
 
 # Script designed to estimate Evapotranspiration (ET) using variables/images obtained on September 01, 2016. If another type of imagery/date used then change them as indicated below
 
